@@ -1,0 +1,527 @@
+// FRONT CLOCKWISE
+    public void frontCw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.F)[0][0];
+        kocka.get(Oldal.F)[0][0] = kocka.get(Oldal.F)[0][1];
+        kocka.get(Oldal.F)[0][1] = kocka.get(Oldal.F)[1][1];
+        kocka.get(Oldal.F)[1][1] = kocka.get(Oldal.F)[1][0];
+        kocka.get(Oldal.F)[1][0] = temp1;
+
+        temp1 = kocka.get(Oldal.U)[1][0];
+        temp2 = kocka.get(Oldal.U)[1][1];
+        kocka.get(Oldal.U)[1][0] = kocka.get(Oldal.L)[0][1];
+        kocka.get(Oldal.U)[1][1] = kocka.get(Oldal.L)[1][1];
+        kocka.get(Oldal.L)[0][1] = kocka.get(Oldal.D)[0][0];
+        kocka.get(Oldal.L)[1][1] = kocka.get(Oldal.D)[0][1];
+        kocka.get(Oldal.D)[0][0] = kocka.get(Oldal.R)[1][0];
+        kocka.get(Oldal.D)[0][1] = kocka.get(Oldal.R)[0][0];
+        kocka.get(Oldal.R)[1][0] = temp1;
+        kocka.get(Oldal.R)[0][0] = temp2;
+    }
+
+    // FRONT ANTICLOCKWISE
+    public void frontAcw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.F)[0][0];
+        kocka.get(Oldal.F)[0][0] = kocka.get(Oldal.F)[1][0];
+        kocka.get(Oldal.F)[1][0] = kocka.get(Oldal.F)[1][1];
+        kocka.get(Oldal.F)[1][1] = kocka.get(Oldal.F)[0][1];
+        kocka.get(Oldal.F)[0][1] = temp1;
+
+        temp1 = kocka.get(Oldal.U)[1][0];
+        temp2 = kocka.get(Oldal.U)[1][1];
+        kocka.get(Oldal.U)[1][0] = kocka.get(Oldal.R)[0][0];
+        kocka.get(Oldal.U)[1][1] = kocka.get(Oldal.R)[1][0];
+        kocka.get(Oldal.R)[0][0] = kocka.get(Oldal.D)[0][1];
+        kocka.get(Oldal.R)[1][0] = kocka.get(Oldal.D)[0][0];
+        kocka.get(Oldal.D)[0][1] = kocka.get(Oldal.L)[1][1];
+        kocka.get(Oldal.D)[0][0] = kocka.get(Oldal.L)[0][1];
+        kocka.get(Oldal.L)[1][1] = temp1;
+        kocka.get(Oldal.L)[0][1] = temp2;
+    }
+
+    // RIGHT CLOCKWISE
+    public void rightCw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.R)[0][0];
+        kocka.get(Oldal.R)[0][0] = kocka.get(Oldal.R)[1][0];
+        kocka.get(Oldal.R)[1][0] = kocka.get(Oldal.R)[1][1];
+        kocka.get(Oldal.R)[1][1] = kocka.get(Oldal.R)[0][1];
+        kocka.get(Oldal.R)[0][1] = temp1;
+
+        temp1 = kocka.get(Oldal.U)[0][1];
+        temp2 = kocka.get(Oldal.U)[1][1];
+        kocka.get(Oldal.U)[0][1] = kocka.get(Oldal.F)[0][1];
+        kocka.get(Oldal.U)[1][1] = kocka.get(Oldal.F)[1][1];
+        kocka.get(Oldal.F)[0][1] = kocka.get(Oldal.D)[0][1];
+        kocka.get(Oldal.F)[1][1] = kocka.get(Oldal.D)[1][1];
+        kocka.get(Oldal.D)[0][1] = kocka.get(Oldal.B)[0][0];
+        kocka.get(Oldal.D)[1][1] = kocka.get(Oldal.B)[1][1];
+        kocka.get(Oldal.B)[0][0] = temp2;
+        kocka.get(Oldal.B)[1][0] = temp1;
+    }
+
+    // RIGHT ANTICLOCKWISE
+    public void rightAcw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.R)[0][0];
+        kocka.get(Oldal.R)[0][0] = kocka.get(Oldal.R)[0][1];
+        kocka.get(Oldal.R)[0][1] = kocka.get(Oldal.R)[1][1];
+        kocka.get(Oldal.R)[1][0] = temp1;
+        kocka.get(Oldal.R)[1][1] = kocka.get(Oldal.R)[1][1];
+
+        temp1 = kocka.get(Oldal.U)[0][1];
+        temp2 = kocka.get(Oldal.U)[1][1];
+        kocka.get(Oldal.U)[0][1] = kocka.get(Oldal.B)[1][0];
+        kocka.get(Oldal.U)[1][1] = kocka.get(Oldal.B)[0][0];
+        kocka.get(Oldal.B)[0][0] = kocka.get(Oldal.D)[1][1];
+        kocka.get(Oldal.B)[1][0] = kocka.get(Oldal.D)[0][1];
+        kocka.get(Oldal.D)[0][1] = kocka.get(Oldal.F)[0][1];
+        kocka.get(Oldal.D)[1][1] = kocka.get(Oldal.F)[1][1];
+        kocka.get(Oldal.F)[0][1] = temp1;
+        kocka.get(Oldal.F)[1][1] = temp2;
+    }
+
+    // LEFT CLOCKWISE
+    public void leftCw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.L)[0][0];
+        kocka.get(Oldal.L)[0][0] = kocka.get(Oldal.L)[0][1];
+        kocka.get(Oldal.L)[1][0] = temp1;
+        kocka.get(Oldal.L)[1][1] = kocka.get(Oldal.L)[1][0];
+        kocka.get(Oldal.L)[0][1] = kocka.get(Oldal.L)[1][1];
+
+        temp1 = kocka.get(Oldal.U)[0][0];
+        temp2 = kocka.get(Oldal.U)[1][0];
+        kocka.get(Oldal.U)[0][0] = kocka.get(Oldal.F)[0][0];
+        kocka.get(Oldal.U)[1][0] = kocka.get(Oldal.F)[1][0];
+        kocka.get(Oldal.F)[0][0] = kocka.get(Oldal.D)[0][0];
+        kocka.get(Oldal.F)[1][0] = kocka.get(Oldal.D)[1][0];
+        kocka.get(Oldal.D)[0][0] = kocka.get(Oldal.B)[1][1];
+        kocka.get(Oldal.D)[1][0] = kocka.get(Oldal.B)[0][1];
+        kocka.get(Oldal.B)[0][1] = temp2;
+        kocka.get(Oldal.B)[1][1] = temp1;
+    }
+
+    // LEFT ANTICLOCKWISE
+    public void leftAcw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.L)[0][0];
+        kocka.get(Oldal.L)[0][0] = kocka.get(Oldal.L)[1][0];
+        kocka.get(Oldal.L)[1][0] = kocka.get(Oldal.L)[1][1];
+        kocka.get(Oldal.L)[1][1] = kocka.get(Oldal.L)[0][1];
+        kocka.get(Oldal.L)[0][1] = temp1;
+
+        temp1 = kocka.get(Oldal.U)[0][0];
+        temp2 = kocka.get(Oldal.U)[1][0];
+        kocka.get(Oldal.U)[0][0] = kocka.get(Oldal.B)[1][1];
+        kocka.get(Oldal.U)[1][0] = kocka.get(Oldal.B)[0][1];
+        kocka.get(Oldal.B)[0][1] = kocka.get(Oldal.D)[1][0];
+        kocka.get(Oldal.B)[1][1] = kocka.get(Oldal.D)[0][0];
+        kocka.get(Oldal.D)[0][0] = kocka.get(Oldal.F)[0][0];
+        kocka.get(Oldal.D)[1][0] = kocka.get(Oldal.F)[1][0];
+        kocka.get(Oldal.F)[0][0] = temp1;
+        kocka.get(Oldal.F)[1][0] = temp2;
+    }
+
+    // UP CW
+    public void upCw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.U)[0][0];
+        kocka.get(Oldal.U)[0][0] = kocka.get(Oldal.U)[1][0];
+        kocka.get(Oldal.U)[1][0] = kocka.get(Oldal.U)[1][1];
+        kocka.get(Oldal.U)[1][1] = kocka.get(Oldal.U)[0][1];
+        kocka.get(Oldal.U)[0][1] = temp1;
+
+        temp1 = kocka.get(Oldal.F)[0][0];
+        temp2 = kocka.get(Oldal.F)[0][1];
+        kocka.get(Oldal.F)[0][0] = kocka.get(Oldal.R)[0][0];
+        kocka.get(Oldal.F)[0][1] = kocka.get(Oldal.R)[0][1];
+        kocka.get(Oldal.R)[0][0] = kocka.get(Oldal.B)[0][0];
+        kocka.get(Oldal.R)[0][1] = kocka.get(Oldal.B)[0][1];
+        kocka.get(Oldal.B)[0][0] = kocka.get(Oldal.L)[0][1];
+        kocka.get(Oldal.B)[0][1] = kocka.get(Oldal.L)[0][0];
+        kocka.get(Oldal.L)[0][0] = temp1;
+        kocka.get(Oldal.L)[0][1] = temp2;
+    }
+
+    // UP ACW
+    public void upAcw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.U)[0][0];
+        kocka.get(Oldal.U)[0][0] = kocka.get(Oldal.U)[0][1];
+        kocka.get(Oldal.U)[0][1] = kocka.get(Oldal.U)[1][1];
+        kocka.get(Oldal.U)[1][1] = kocka.get(Oldal.U)[1][0];
+        kocka.get(Oldal.U)[1][0] = temp1;
+
+        temp1 = kocka.get(Oldal.F)[0][0];
+        temp2 = kocka.get(Oldal.F)[0][1];
+        kocka.get(Oldal.F)[0][0] = kocka.get(Oldal.L)[0][0];
+        kocka.get(Oldal.F)[0][1] = kocka.get(Oldal.L)[0][1];
+        kocka.get(Oldal.L)[0][0] = kocka.get(Oldal.B)[0][1];
+        kocka.get(Oldal.L)[0][1] = kocka.get(Oldal.B)[0][0];
+        kocka.get(Oldal.B)[0][0] = kocka.get(Oldal.R)[0][0];
+        kocka.get(Oldal.B)[0][1] = kocka.get(Oldal.R)[0][1];
+        kocka.get(Oldal.R)[0][0] = temp1;
+        kocka.get(Oldal.R)[0][1] = temp2;
+    }
+
+    // DOWN CW
+    public void downCw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.D)[0][0];
+        kocka.get(Oldal.D)[0][0] = kocka.get(Oldal.D)[0][1];
+        kocka.get(Oldal.D)[0][1] = kocka.get(Oldal.D)[1][1];
+        kocka.get(Oldal.D)[1][1] = kocka.get(Oldal.D)[1][0];
+        kocka.get(Oldal.D)[1][0] = temp1;
+
+        temp1 = kocka.get(Oldal.F)[1][0];
+        temp2 = kocka.get(Oldal.F)[1][1];
+        kocka.get(Oldal.F)[1][0] = kocka.get(Oldal.R)[1][0];
+        kocka.get(Oldal.F)[1][1] = kocka.get(Oldal.R)[1][1];
+        kocka.get(Oldal.R)[1][0] = kocka.get(Oldal.B)[1][0];
+        kocka.get(Oldal.R)[1][1] = kocka.get(Oldal.B)[1][1];
+        kocka.get(Oldal.B)[1][0] = kocka.get(Oldal.L)[1][1];
+        kocka.get(Oldal.B)[1][1] = kocka.get(Oldal.L)[1][0];
+        kocka.get(Oldal.L)[1][0] = temp1;
+        kocka.get(Oldal.L)[1][1] = temp2;
+    }
+
+    // DOWN ACW
+    public void downAcw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.U)[0][0];
+        kocka.get(Oldal.U)[0][0] = kocka.get(Oldal.U)[1][0];
+        kocka.get(Oldal.U)[1][0] = kocka.get(Oldal.U)[1][1];
+        kocka.get(Oldal.U)[1][1] = kocka.get(Oldal.U)[0][1];
+        kocka.get(Oldal.U)[0][1] = temp1;
+
+        temp1 = kocka.get(Oldal.F)[1][0];
+        temp2 = kocka.get(Oldal.F)[1][1];
+        kocka.get(Oldal.F)[1][0] = kocka.get(Oldal.L)[1][0];
+        kocka.get(Oldal.F)[1][1] = kocka.get(Oldal.L)[1][1];
+        kocka.get(Oldal.L)[1][0] = kocka.get(Oldal.B)[1][1];
+        kocka.get(Oldal.L)[1][1] = kocka.get(Oldal.B)[1][0];
+        kocka.get(Oldal.B)[1][0] = kocka.get(Oldal.R)[1][0];
+        kocka.get(Oldal.B)[1][1] = kocka.get(Oldal.R)[1][1];
+        kocka.get(Oldal.R)[1][0] = temp1;
+        kocka.get(Oldal.R)[1][1] = temp2;
+    }
+
+    // BACK CW
+    public void backCw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.B)[0][0];
+        kocka.get(Oldal.B)[0][0] = kocka.get(Oldal.B)[0][1];
+        kocka.get(Oldal.B)[0][1] = kocka.get(Oldal.B)[1][1];
+        kocka.get(Oldal.B)[1][1] = kocka.get(Oldal.B)[1][0];
+        kocka.get(Oldal.B)[1][0] = temp1;
+
+        temp1 = kocka.get(Oldal.U)[0][0];
+        temp2 = kocka.get(Oldal.U)[0][1];
+        kocka.get(Oldal.U)[0][0] = kocka.get(Oldal.L)[1][0];
+        kocka.get(Oldal.U)[0][1] = kocka.get(Oldal.L)[0][0];
+        kocka.get(Oldal.L)[0][0] = kocka.get(Oldal.D)[1][0];
+        kocka.get(Oldal.L)[1][0] = kocka.get(Oldal.D)[1][1];
+        kocka.get(Oldal.D)[1][0] = kocka.get(Oldal.R)[1][1];
+        kocka.get(Oldal.D)[1][1] = kocka.get(Oldal.R)[0][1];
+        kocka.get(Oldal.R)[0][1] = temp1;
+        kocka.get(Oldal.R)[1][1] = temp2;
+    }
+
+    // BACK ACW
+    public void backAcw() {
+        Szin temp1;
+        Szin temp2;
+
+        temp1 = kocka.get(Oldal.B)[0][0];
+        kocka.get(Oldal.B)[0][0] = kocka.get(Oldal.B)[0][1];
+        kocka.get(Oldal.B)[0][1] = kocka.get(Oldal.B)[1][1];
+        kocka.get(Oldal.B)[1][1] = kocka.get(Oldal.B)[1][0];
+        kocka.get(Oldal.B)[1][0] = temp1;
+
+        temp1 = kocka.get(Oldal.U)[0][0];
+        temp2 = kocka.get(Oldal.U)[0][1];
+        kocka.get(Oldal.U)[0][0] = kocka.get(Oldal.R)[0][1];
+        kocka.get(Oldal.U)[0][1] = kocka.get(Oldal.R)[1][1];
+        kocka.get(Oldal.R)[0][1] = kocka.get(Oldal.D)[1][1];
+        kocka.get(Oldal.R)[1][1] = kocka.get(Oldal.D)[1][0];
+        kocka.get(Oldal.D)[1][0] = kocka.get(Oldal.L)[0][0];
+        kocka.get(Oldal.D)[1][1] = kocka.get(Oldal.L)[1][0];
+        kocka.get(Oldal.L)[0][0] = temp2;
+        kocka.get(Oldal.L)[1][0] = temp1;
+    }
+
+// FRONT CLOCKWISE
+    /*public Map<Oldal, Szin[][]> frontCw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.F)[0][0] = this.kocka.get(Oldal.F)[0][1];
+        ujKocka.get(Oldal.F)[0][1] = this.kocka.get(Oldal.F)[1][1];
+        ujKocka.get(Oldal.F)[1][1] = this.kocka.get(Oldal.F)[1][0];
+        ujKocka.get(Oldal.F)[1][0] = this.kocka.get(Oldal.F)[0][0];
+
+        ujKocka.get(Oldal.U)[1][0] = this.kocka.get(Oldal.L)[0][1];
+        ujKocka.get(Oldal.U)[1][1] = this.kocka.get(Oldal.L)[1][1];
+        ujKocka.get(Oldal.L)[0][1] = this.kocka.get(Oldal.D)[0][0];
+        ujKocka.get(Oldal.L)[1][1] = this.kocka.get(Oldal.D)[0][1];
+        ujKocka.get(Oldal.D)[0][0] = this.kocka.get(Oldal.R)[1][0];
+        ujKocka.get(Oldal.D)[0][1] = this.kocka.get(Oldal.R)[0][0];
+        ujKocka.get(Oldal.R)[1][0] = this.kocka.get(Oldal.U)[1][0];
+        ujKocka.get(Oldal.R)[0][0] = this.kocka.get(Oldal.U)[1][1];
+
+        return ujKocka;
+    }
+
+    // FRONT ANTICLOCKWISE
+    public Map<Oldal, Szin[][]> frontAcw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.F)[0][0] = this.kocka.get(Oldal.F)[1][0];
+        ujKocka.get(Oldal.F)[1][0] = this.kocka.get(Oldal.F)[1][1];
+        ujKocka.get(Oldal.F)[1][1] = this.kocka.get(Oldal.F)[0][1];
+        ujKocka.get(Oldal.F)[0][1] = this.kocka.get(Oldal.F)[0][0];
+
+        ujKocka.get(Oldal.U)[1][0] = this.kocka.get(Oldal.R)[0][0];
+        ujKocka.get(Oldal.U)[1][1] = this.kocka.get(Oldal.R)[1][0];
+        ujKocka.get(Oldal.R)[0][0] = this.kocka.get(Oldal.D)[0][1];
+        ujKocka.get(Oldal.R)[1][0] = this.kocka.get(Oldal.D)[0][0];
+        ujKocka.get(Oldal.D)[0][1] = this.kocka.get(Oldal.L)[1][1];
+        ujKocka.get(Oldal.D)[0][0] = this.kocka.get(Oldal.L)[0][1];
+        ujKocka.get(Oldal.L)[1][1] = this.kocka.get(Oldal.U)[1][0];
+        ujKocka.get(Oldal.L)[0][1] = this.kocka.get(Oldal.U)[1][1];
+
+        return ujKocka;
+    }
+
+    // RIGHT CLOCKWISE
+    public Map<Oldal, Szin[][]> rightCw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.R)[0][0] = this.kocka.get(Oldal.R)[1][0];
+        ujKocka.get(Oldal.R)[1][0] = this.kocka.get(Oldal.R)[1][1];
+        ujKocka.get(Oldal.R)[1][1] = this.kocka.get(Oldal.R)[0][1];
+        ujKocka.get(Oldal.R)[0][1] = this.kocka.get(Oldal.R)[0][0];
+
+        ujKocka.get(Oldal.U)[0][1] = this.kocka.get(Oldal.F)[0][1];
+        ujKocka.get(Oldal.U)[1][1] = this.kocka.get(Oldal.F)[1][1];
+        ujKocka.get(Oldal.F)[0][1] = this.kocka.get(Oldal.D)[0][1];
+        ujKocka.get(Oldal.F)[1][1] = this.kocka.get(Oldal.D)[1][1];
+        ujKocka.get(Oldal.D)[0][1] = this.kocka.get(Oldal.B)[0][0];
+        ujKocka.get(Oldal.D)[1][1] = this.kocka.get(Oldal.B)[1][1];
+        ujKocka.get(Oldal.B)[0][0] = this.kocka.get(Oldal.U)[1][1];
+        ujKocka.get(Oldal.B)[1][0] = this.kocka.get(Oldal.U)[0][1];
+
+        return ujKocka;
+    }
+
+    // RIGHT ANTICLOCKWISE
+    public Map<Oldal, Szin[][]> rightAcw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.R)[0][0] = this.kocka.get(Oldal.R)[0][1];
+        ujKocka.get(Oldal.R)[0][1] = this.kocka.get(Oldal.R)[1][1];
+        ujKocka.get(Oldal.R)[1][0] = this.kocka.get(Oldal.R)[0][0];
+        ujKocka.get(Oldal.R)[1][1] = this.kocka.get(Oldal.R)[1][1];
+
+        ujKocka.get(Oldal.U)[0][1] = this.kocka.get(Oldal.B)[1][0];
+        ujKocka.get(Oldal.U)[1][1] = this.kocka.get(Oldal.B)[0][0];
+        ujKocka.get(Oldal.B)[0][0] = this.kocka.get(Oldal.D)[1][1];
+        ujKocka.get(Oldal.B)[1][0] = this.kocka.get(Oldal.D)[0][1];
+        ujKocka.get(Oldal.D)[0][1] = this.kocka.get(Oldal.F)[0][1];
+        ujKocka.get(Oldal.D)[1][1] = this.kocka.get(Oldal.F)[1][1];
+        ujKocka.get(Oldal.F)[0][1] = this.kocka.get(Oldal.U)[0][1];
+        ujKocka.get(Oldal.F)[1][1] = this.kocka.get(Oldal.U)[1][1];
+
+        return ujKocka;
+    }
+
+    // LEFT CLOCKWISE
+    public Map<Oldal, Szin[][]> leftCw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.L)[0][0] = this.kocka.get(Oldal.L)[0][1];
+        ujKocka.get(Oldal.L)[1][0] = this.kocka.get(Oldal.L)[0][0];
+        ujKocka.get(Oldal.L)[1][1] = this.kocka.get(Oldal.L)[1][0];
+        ujKocka.get(Oldal.L)[0][1] = this.kocka.get(Oldal.L)[1][1];
+
+        ujKocka.get(Oldal.U)[0][0] = this.kocka.get(Oldal.F)[0][0];
+        ujKocka.get(Oldal.U)[1][0] = this.kocka.get(Oldal.F)[1][0];
+        ujKocka.get(Oldal.F)[0][0] = this.kocka.get(Oldal.D)[0][0];
+        ujKocka.get(Oldal.F)[1][0] = this.kocka.get(Oldal.D)[1][0];
+        ujKocka.get(Oldal.D)[0][0] = this.kocka.get(Oldal.B)[1][1];
+        ujKocka.get(Oldal.D)[1][0] = this.kocka.get(Oldal.B)[0][1];
+        ujKocka.get(Oldal.B)[0][1] = this.kocka.get(Oldal.U)[1][0];
+        ujKocka.get(Oldal.B)[1][1] = this.kocka.get(Oldal.U)[0][0];
+
+        return ujKocka;
+    }
+
+    // LEFT ANTICLOCKWISE
+    public Map<Oldal, Szin[][]> leftAcw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.L)[0][0] = this.kocka.get(Oldal.L)[1][0];
+        ujKocka.get(Oldal.L)[1][0] = this.kocka.get(Oldal.L)[1][1];
+        ujKocka.get(Oldal.L)[1][1] = this.kocka.get(Oldal.L)[0][1];
+        ujKocka.get(Oldal.L)[0][1] = this.kocka.get(Oldal.L)[0][0];
+
+        ujKocka.get(Oldal.U)[0][0] = this.kocka.get(Oldal.B)[1][1];
+        ujKocka.get(Oldal.U)[1][0] = this.kocka.get(Oldal.B)[0][1];
+        ujKocka.get(Oldal.B)[0][1] = this.kocka.get(Oldal.D)[1][0];
+        ujKocka.get(Oldal.B)[1][1] = this.kocka.get(Oldal.D)[0][0];
+        ujKocka.get(Oldal.D)[0][0] = this.kocka.get(Oldal.F)[0][0];
+        ujKocka.get(Oldal.D)[1][0] = this.kocka.get(Oldal.F)[1][0];
+        ujKocka.get(Oldal.F)[0][0] = this.kocka.get(Oldal.U)[0][0];
+        ujKocka.get(Oldal.F)[1][0] = this.kocka.get(Oldal.U)[1][0];
+
+        return ujKocka;
+    }
+
+    // UP CW
+    public Map<Oldal, Szin[][]> upCw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.U)[0][0] = this.kocka.get(Oldal.U)[1][0];
+        ujKocka.get(Oldal.U)[1][0] = this.kocka.get(Oldal.U)[1][1];
+        ujKocka.get(Oldal.U)[1][1] = this.kocka.get(Oldal.U)[0][1];
+        ujKocka.get(Oldal.U)[0][1] = this.kocka.get(Oldal.U)[0][0];
+
+        ujKocka.get(Oldal.F)[0][0] = this.kocka.get(Oldal.R)[0][0];
+        ujKocka.get(Oldal.F)[0][1] = this.kocka.get(Oldal.R)[0][1];
+        ujKocka.get(Oldal.R)[0][0] = this.kocka.get(Oldal.B)[0][0];
+        ujKocka.get(Oldal.R)[0][1] = this.kocka.get(Oldal.B)[0][1];
+        ujKocka.get(Oldal.B)[0][0] = this.kocka.get(Oldal.L)[0][1];
+        ujKocka.get(Oldal.B)[0][1] = this.kocka.get(Oldal.L)[0][0];
+        ujKocka.get(Oldal.L)[0][0] = this.kocka.get(Oldal.F)[0][0];
+        ujKocka.get(Oldal.L)[0][1] = this.kocka.get(Oldal.F)[0][1];
+
+        return ujKocka;
+    }
+
+    // UP ACW
+    public Map<Oldal, Szin[][]> upAcw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.U)[0][0] = this.kocka.get(Oldal.U)[0][1];
+        ujKocka.get(Oldal.U)[0][1] = this.kocka.get(Oldal.U)[1][1];
+        ujKocka.get(Oldal.U)[1][1] = this.kocka.get(Oldal.U)[1][0];
+        ujKocka.get(Oldal.U)[1][0] = this.kocka.get(Oldal.U)[0][0];
+
+        ujKocka.get(Oldal.F)[0][0] = this.kocka.get(Oldal.L)[0][0];
+        ujKocka.get(Oldal.F)[0][1] = this.kocka.get(Oldal.L)[0][1];
+        ujKocka.get(Oldal.L)[0][0] = this.kocka.get(Oldal.B)[0][1];
+        ujKocka.get(Oldal.L)[0][1] = this.kocka.get(Oldal.B)[0][0];
+        ujKocka.get(Oldal.B)[0][0] = this.kocka.get(Oldal.R)[0][0];
+        ujKocka.get(Oldal.B)[0][1] = this.kocka.get(Oldal.R)[0][1];
+        ujKocka.get(Oldal.R)[0][0] = this.kocka.get(Oldal.F)[0][0];
+        ujKocka.get(Oldal.R)[0][1] = this.kocka.get(Oldal.F)[0][1];
+
+        return ujKocka;
+    }
+
+    // DOWN CW
+    public Map<Oldal, Szin[][]> downCw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.D)[0][0] = this.kocka.get(Oldal.D)[0][1];
+        ujKocka.get(Oldal.D)[0][1] = this.kocka.get(Oldal.D)[1][1];
+        ujKocka.get(Oldal.D)[1][1] = this.kocka.get(Oldal.D)[1][0];
+        ujKocka.get(Oldal.D)[1][0] = this.kocka.get(Oldal.D)[0][0];
+
+        ujKocka.get(Oldal.F)[1][0] = this.kocka.get(Oldal.R)[1][0];
+        ujKocka.get(Oldal.F)[1][1] = this.kocka.get(Oldal.R)[1][1];
+        ujKocka.get(Oldal.R)[1][0] = this.kocka.get(Oldal.B)[1][0];
+        ujKocka.get(Oldal.R)[1][1] = this.kocka.get(Oldal.B)[1][1];
+        ujKocka.get(Oldal.B)[1][0] = this.kocka.get(Oldal.L)[1][1];
+        ujKocka.get(Oldal.B)[1][1] = this.kocka.get(Oldal.L)[1][0];
+        ujKocka.get(Oldal.L)[1][0] = this.kocka.get(Oldal.F)[1][0];
+        ujKocka.get(Oldal.L)[1][1] = this.kocka.get(Oldal.F)[1][1];
+
+        return ujKocka;
+    }
+
+    // DOWN ACW
+    public Map<Oldal, Szin[][]> downAcw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.D)[0][0] = this.kocka.get(Oldal.D)[1][0];
+        ujKocka.get(Oldal.D)[1][0] = this.kocka.get(Oldal.D)[1][1];
+        ujKocka.get(Oldal.D)[1][1] = this.kocka.get(Oldal.D)[0][1];
+        ujKocka.get(Oldal.D)[0][1] = this.kocka.get(Oldal.U)[0][0];
+
+        ujKocka.get(Oldal.F)[1][0] = this.kocka.get(Oldal.L)[1][0];
+        ujKocka.get(Oldal.F)[1][1] = this.kocka.get(Oldal.L)[1][1];
+        ujKocka.get(Oldal.L)[1][0] = this.kocka.get(Oldal.B)[1][1];
+        ujKocka.get(Oldal.L)[1][1] = this.kocka.get(Oldal.B)[1][0];
+        ujKocka.get(Oldal.B)[1][0] = this.kocka.get(Oldal.R)[1][0];
+        ujKocka.get(Oldal.B)[1][1] = this.kocka.get(Oldal.R)[1][1];
+        ujKocka.get(Oldal.R)[1][0] = this.kocka.get(Oldal.F)[1][0];
+        ujKocka.get(Oldal.R)[1][1] = this.kocka.get(Oldal.F)[1][1];
+
+        return ujKocka;
+    }
+
+    // BACK CW
+    public Map<Oldal, Szin[][]> backCw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.B)[0][0] = this.kocka.get(Oldal.B)[0][1];
+        ujKocka.get(Oldal.B)[0][1] = this.kocka.get(Oldal.B)[1][1];
+        ujKocka.get(Oldal.B)[1][1] = this.kocka.get(Oldal.B)[1][0];
+        ujKocka.get(Oldal.B)[1][0] = this.kocka.get(Oldal.B)[0][0];
+
+        ujKocka.get(Oldal.U)[0][0] = this.kocka.get(Oldal.L)[1][0];
+        ujKocka.get(Oldal.U)[0][1] = this.kocka.get(Oldal.L)[0][0];
+        ujKocka.get(Oldal.L)[0][0] = this.kocka.get(Oldal.D)[1][0];
+        ujKocka.get(Oldal.L)[1][0] = this.kocka.get(Oldal.D)[1][1];
+        ujKocka.get(Oldal.D)[1][0] = this.kocka.get(Oldal.R)[1][1];
+        ujKocka.get(Oldal.D)[1][1] = this.kocka.get(Oldal.R)[0][1];
+        ujKocka.get(Oldal.R)[0][1] = kocka.get(Oldal.U)[0][0];
+        ujKocka.get(Oldal.R)[1][1] = kocka.get(Oldal.U)[0][1];
+
+        return ujKocka;
+    }
+
+    // BACK ACW
+    public Map<Oldal, Szin[][]> backAcw() {
+        Map<Oldal, Szin[][]> ujKocka = Map.copyOf(this.kocka);
+
+        ujKocka.get(Oldal.B)[0][0] = this.kocka.get(Oldal.B)[0][1];
+        ujKocka.get(Oldal.B)[0][1] = this.kocka.get(Oldal.B)[1][1];
+        ujKocka.get(Oldal.B)[1][1] = this.kocka.get(Oldal.B)[1][0];
+        ujKocka.get(Oldal.B)[1][0] = this.kocka.get(Oldal.B)[0][0];
+
+        ujKocka.get(Oldal.U)[0][0] = this.kocka.get(Oldal.R)[0][1];
+        ujKocka.get(Oldal.U)[0][1] = this.kocka.get(Oldal.R)[1][1];
+        ujKocka.get(Oldal.R)[0][1] = this.kocka.get(Oldal.D)[1][1];
+        ujKocka.get(Oldal.R)[1][1] = this.kocka.get(Oldal.D)[1][0];
+        ujKocka.get(Oldal.D)[1][0] = this.kocka.get(Oldal.L)[0][0];
+        ujKocka.get(Oldal.D)[1][1] = this.kocka.get(Oldal.L)[1][0];
+        ujKocka.get(Oldal.L)[0][0] = this.kocka.get(Oldal.U)[0][1];
+        ujKocka.get(Oldal.L)[1][0] = this.kocka.get(Oldal.U)[0][0];
+
+        return ujKocka;
+    }*/
