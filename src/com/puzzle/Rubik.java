@@ -7,7 +7,7 @@ public class Rubik extends AbstractState{
     private enum Oldal { F, L, R, B, U, D}
     private enum Szin  { W, R, B, O, Y, G}
 
-    private final Map<Oldal, Szin[][]> kocka;
+    private Map<Oldal, Szin[][]> kocka;
 
     public Rubik() {
         this.kocka = new HashMap<>();
@@ -27,14 +27,30 @@ public class Rubik extends AbstractState{
         this.kocka.put(Oldal.D, d);
     }
 
-    public Rubik (Rubik parent, Map<Oldal, Szin[][]> kocka) {
+    public Rubik (Rubik parent, Map<Oldal, Szin[][]> newKocka) {
         super(parent);
-        this.kocka = Map.copyOf(kocka);
+        this.kocka = DeepCopyCube(newKocka);
+    }
+
+    public static HashMap<Oldal, Szin[][]> DeepCopyCube(Map<Oldal, Szin[][]> cube) {
+        HashMap<Oldal, Szin[][]> newCube = new HashMap<>();
+
+        cube.forEach( (side, color) -> {
+            Szin[][] newColor = new Szin[2][2];
+
+            newColor[0][0] = color[0][0];
+            newColor[0][1] = color[0][1];
+            newColor[1][0] = color[1][0];
+            newColor[1][1] = color[1][1];
+
+            newCube.put(side, newColor);
+        } );
+        return newCube;
     }
 
     // FRONT CLOCKWISE
     public Map<Oldal, Szin[][]> frontCw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -61,7 +77,7 @@ public class Rubik extends AbstractState{
 
     // FRONT ANTICLOCKWISE
     public Map<Oldal, Szin[][]> frontAcw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
