@@ -104,7 +104,7 @@ public class Rubik extends AbstractState{
 
     // RIGHT CLOCKWISE
     public Map<Oldal, Szin[][]> rightCw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -131,7 +131,7 @@ public class Rubik extends AbstractState{
 
     // RIGHT ANTICLOCKWISE
     public Map<Oldal, Szin[][]> rightAcw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -158,7 +158,7 @@ public class Rubik extends AbstractState{
 
     // LEFT CLOCKWISE
     public Map<Oldal, Szin[][]> leftCw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -185,7 +185,7 @@ public class Rubik extends AbstractState{
 
     // LEFT ANTICLOCKWISE
     public Map<Oldal, Szin[][]> leftAcw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -212,7 +212,7 @@ public class Rubik extends AbstractState{
 
     // UP CW
     public Map<Oldal, Szin[][]> upCw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -239,7 +239,7 @@ public class Rubik extends AbstractState{
 
     // UP ACW
     public Map<Oldal, Szin[][]> upAcw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -266,7 +266,7 @@ public class Rubik extends AbstractState{
 
     // DOWN CW
     public Map<Oldal, Szin[][]> downCw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -293,7 +293,7 @@ public class Rubik extends AbstractState{
 
     // DOWN ACW
     public Map<Oldal, Szin[][]> downAcw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -320,7 +320,7 @@ public class Rubik extends AbstractState{
 
     // BACK CW
     public Map<Oldal, Szin[][]> backCw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -347,7 +347,7 @@ public class Rubik extends AbstractState{
 
     // BACK ACW
     public Map<Oldal, Szin[][]> backAcw() {
-        Map<Oldal, Szin[][]> tempCube = Map.copyOf(this.kocka);
+        Map<Oldal, Szin[][]> tempCube = DeepCopyCube(this.kocka);
 
         Szin temp1;
         Szin temp2;
@@ -377,36 +377,34 @@ public class Rubik extends AbstractState{
         ArrayList<State> moves = new ArrayList<>();
 
         Rubik cube = new Rubik(this, this.frontCw());
-        System.out.println(cube);
         moves.add(cube);
-        System.out.println(moves);
-        Rubik cube2 =new Rubik(this, this.frontAcw());
-        moves.add(cube2);
+        cube =new Rubik(this, this.frontAcw());
+        moves.add(cube);
 
-        /*kockaMove = new Rubik(this, rightCw());
-        moves.add(kockaMove);
-        kockaMove = new Rubik(this, rightAcw());
-        moves.add(kockaMove);
+        cube = new Rubik(this, rightCw());
+        moves.add(cube);
+        cube = new Rubik(this, rightAcw());
+        moves.add(cube);
 
-        kockaMove = new Rubik(this, leftCw());
-        moves.add(kockaMove);
-        kockaMove = new Rubik(this, leftAcw());
-        moves.add(kockaMove);
+        cube = new Rubik(this, leftCw());
+        moves.add(cube);
+        cube = new Rubik(this, leftAcw());
+        moves.add(cube);
 
-        kockaMove = new Rubik(this, upCw());
-        moves.add(kockaMove);
-        kockaMove = new Rubik(this, upAcw());
-        moves.add(kockaMove);
+        cube = new Rubik(this, upCw());
+        moves.add(cube);
+        cube = new Rubik(this, upAcw());
+        moves.add(cube);
 
-        kockaMove = new Rubik(this, downCw());
-        moves.add(kockaMove);
-        kockaMove = new Rubik(this, downAcw());
-        moves.add(kockaMove);
+        cube = new Rubik(this, downCw());
+        moves.add(cube);
+        cube = new Rubik(this, downAcw());
+        moves.add(cube);
 
-        kockaMove = new Rubik(this, backCw());
-        moves.add(kockaMove);
-        kockaMove = new Rubik(this, backAcw());
-        moves.add(kockaMove);*/
+        cube = new Rubik(this, backCw());
+        moves.add(cube);
+        cube = new Rubik(this, backAcw());
+        moves.add(cube);
 
         return moves;
     }
